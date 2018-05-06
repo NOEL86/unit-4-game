@@ -1,0 +1,17 @@
+body, h1 {
+    background-image: url('https://i.imgur.com/OuSizUw.jpg');
+}
+
+h1 {
+    font-family: 'Russo One', sans-serif;
+    text-shadow: 3px 3px white;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    margin-left: 250px;
+}
+
+.card {
+    margin-left: 20px;
+}
+
+
