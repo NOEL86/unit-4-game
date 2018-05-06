@@ -3,15 +3,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Star Wars Game</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" type="text/css" media="screen" href="assets/resets.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/style.css" />
-    <script src="assets/game.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
+    <script languages="javascript" type="text/javascript" src="assets/game.js"></script>
+
 </head>
 
 <body>
@@ -23,8 +28,8 @@
     <div class="row">
         <div class="col-md-3">
 
-            <div id="fighter" class="card" style="width: 15rem;">
-                <img class="card-img-top" src="http://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2018/01/star-wars-the-last-jedi.png?itok=kjYWh854">
+            <div id="fighter" class="card" class="ui-droppable-tive" style="width: 15rem;">
+                <img class="card-img-top" src="http://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2018/01/star-wars-the-last-jedi.png?itok=kjYWh854 ">
                 <div class="card-body" style="padding: 0.25rem;">
                     <h5 class="card-title" style="text-align: center">Luke Skywalker</h5>
                 </div>
@@ -33,31 +38,57 @@
 
         <div class="col-md-3">
             <div id="fighter" class="card" style="width: 15rem;">
-                <img class="card-img-top" src="https://static1.squarespace.com/static/51b3dc8ee4b051b96ceb10de/t/58caa61d03596e662a4596be/1489675807647/?format=750w">
-                <div class="card-body" style="padding: 0.25rem;">
+                <img class="card-img-top" src="https://static1.squarespace.com/static/51b3dc8ee4b051b96ceb10de/t/58caa61d03596e662a4596be/1489675807647/?format=750w ">
+                <div class="card-body" style="padding: 0.25rem; ">
                     <h5 class="card-title" style="text-align: center">Yoda</h5>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-3 ">
             <div id="vaderSidious" class="card" style="width: 15rem;">
-                <img class="card-img-top" src="https://vignette.wikia.nocookie.net/starwars/images/0/09/SidiousVaderPromo.JPG/revision/latest/scale-to-width-down/250?cb=20060606043642">
+                <img class="card-img-top" src="https://vignette.wikia.nocookie.net/starwars/images/0/09/SidiousVaderPromo.JPG/revision/latest/scale-to-width-down/250?cb=20060606043642 ">
                 <div class="card-body" style="padding: 0.25rem;">
                     <h5 class="card-title" style="text-align: center">Darth Sidious and Vader</h5>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-3 ">
             <div id="fighter" class="card" style="width: 15rem;">
-                <img class="card-img-top" src="https://assets-jpcust.jwpsrv.com/thumbs/hMEZszqF-720.jpg">
+                <img class="card-img-top" src="https://assets-jpcust.jwpsrv.com/thumbs/hMEZszqF-720.jpg ">
                 <div class="card-body" style="padding: 0.25rem;">
-                    <h5 class="card-title" style="text-align: center">General Grevious</h5>
+                    <h5 class="card-title" style="text-align: center ">General Grevious</h5>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="row ">
+        <div class="col-md-6 ">
+            <button type="button" class="btn btn-danger">Attack</button>
+        </div>
+
+        <div class="col-md-6 ">
+            <div id="attackNotes" class="card">
+                <div class="card-body">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="row ">
+        <div class="col-md-12">
+            <img id="playerPosition" class="fightPosition" class="ui-droppable-hover" src="http://catawbabrewing.com/wp-content/themes/catawba/images/placeholder.png "
+                class="rounded float-left" alt="fighter">
+            <img id="challenger" class="fightPosition" src="http://catawbabrewing.com/wp-content/themes/catawba/images/placeholder.png "
+                class="rounded float-right" alt="fighter">
+        </div>
     </div>
 
 </body>
