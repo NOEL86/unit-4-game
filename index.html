@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Star Wars Game</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/resets.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
@@ -17,6 +17,10 @@
         crossorigin="anonymous"></script>
     <script languages="javascript" type="text/javascript" src="assets/game.js"></script>
 
+    <audio id="lightsaber" preload="auto">
+        <source src=""></source>
+    </audio>
+
 </head>
 
 <body>
@@ -28,51 +32,59 @@
     <div class="row">
         <div class="col-md-3">
 
-            <div id="fighter" class="card" class="ui-droppable-tive" style="width: 15rem;">
+            <div id="lukeSkywalker" class="card" class="ui-droppable-tive" style="width: 15rem;">
                 <img class="card-img-top" src="http://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2018/01/star-wars-the-last-jedi.png?itok=kjYWh854 ">
                 <div class="card-body" style="padding: 0.25rem;">
-                    <h5 class="card-title" style="text-align: center">Luke Skywalker</h5>
+                    <h5 class="card-title" style="text-align: center">Luke Skywalker:
+                        <span id="health">160</span>
+                    </h5>
                 </div>
             </div>
         </div>
 
         <div class="col-md-3">
-            <div id="fighter" class="card" style="width: 15rem;">
+            <div id="yoda" class="card" style="width: 15rem;">
                 <img class="card-img-top" src="https://static1.squarespace.com/static/51b3dc8ee4b051b96ceb10de/t/58caa61d03596e662a4596be/1489675807647/?format=750w ">
                 <div class="card-body" style="padding: 0.25rem; ">
-                    <h5 class="card-title" style="text-align: center">Yoda</h5>
+                    <h5 class="card-title" style="text-align: center">Yoda:
+                        <span id="health">120</span>
+                    </h5>
                 </div>
             </div>
         </div>
 
         <div class="col-md-3 ">
-            <div id="vaderSidious" class="card" style="width: 15rem;">
+            <div id="darth" class="card" style="width: 15rem;">
                 <img class="card-img-top" src="https://vignette.wikia.nocookie.net/starwars/images/0/09/SidiousVaderPromo.JPG/revision/latest/scale-to-width-down/250?cb=20060606043642 ">
                 <div class="card-body" style="padding: 0.25rem;">
-                    <h5 class="card-title" style="text-align: center">Darth Sidious and Vader</h5>
+                    <h5 class="card-title" style="text-align: center">Darth Sidious and Vader:
+                        <span id="health">190</span>
+                    </h5>
                 </div>
             </div>
         </div>
 
         <div class="col-md-3 ">
-            <div id="fighter" class="card" style="width: 15rem;">
+            <div id="general" class="card" style="width: 15rem;">
                 <img class="card-img-top" src="https://assets-jpcust.jwpsrv.com/thumbs/hMEZszqF-720.jpg ">
                 <div class="card-body" style="padding: 0.25rem;">
-                    <h5 class="card-title" style="text-align: center ">General Grevious</h5>
+                    <h5 class="card-title" style="text-align: center ">General Grevious:
+                        <span id="health">120</span>
+                    </h5>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row ">
-        <div class="col-md-6 ">
-            <button type="button" class="btn btn-danger">Attack</button>
+    <div class="row">
+        <div class="col-md-6">
+            <button type="button" id="attack" class="btn btn-danger">Attack</button>
         </div>
 
-        <div class="col-md-6 ">
-            <div id="attackNotes" class="card">
+        <div class="col-md-6">
+            <div id="notesBox" class="card">
                 <div class="card-body">
-                    <p></p>
+                    <p id="attackNotes"></p>
                 </div>
             </div>
         </div>
@@ -82,12 +94,22 @@
     <br>
     <br>
 
-    <div class="row ">
-        <div class="col-md-12">
-            <img id="playerPosition" class="fightPosition" class="ui-droppable-hover" src="http://catawbabrewing.com/wp-content/themes/catawba/images/placeholder.png "
-                class="rounded float-left" alt="fighter">
-            <img id="challenger" class="fightPosition" src="http://catawbabrewing.com/wp-content/themes/catawba/images/placeholder.png "
-                class="rounded float-right" alt="fighter">
+    <div class="row">
+        <div class="col-md-6">
+            <div id="playerPosition" class="fightPosition" class="ui-droppable-hover"></div>
+        </div>
+
+        <div class="col-md-6">
+            <div id="oponentPosition" class="fightPosition" class="ui-droppable-hover"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <p id="ftitle">Fighter</p>
+        </div>
+        <div class="col-md-6">
+            <p id="otitle">Oponent</p>
         </div>
     </div>
 
