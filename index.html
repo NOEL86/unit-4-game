@@ -11,14 +11,10 @@
     <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/style.css" />
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-        crossorigin="anonymous"></script>
-    <script languages="javascript" type="text/javascript" src="assets/game.js"></script>
+
 
     <audio id="lightsaber" preload="auto">
-        <source src=""></source>
+        <source src="assets/lightsaber.lnk"></source>
     </audio>
 
 </head>
@@ -32,44 +28,44 @@
     <div class="row">
         <div class="col-md-3">
 
-            <div id="lukeSkywalker" class="card" class="ui-droppable-tive" style="width: 15rem;">
+            <div id="lukeSkywalker" class="card" data-name="Luke Skywalker" nameclass="ui-droppable-tive" style="width: 15rem;">
                 <img class="card-img-top" src="http://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2018/01/star-wars-the-last-jedi.png?itok=kjYWh854 ">
                 <div class="card-body" style="padding: 0.25rem;">
                     <h5 class="card-title" style="text-align: center">Luke Skywalker:
-                        <span id="health">160</span>
+                        <span id="lHealth">160</span>
                     </h5>
                 </div>
             </div>
         </div>
 
         <div class="col-md-3">
-            <div id="yoda" class="card" style="width: 15rem;">
+            <div id="yoda" data-name="Yoda" class="card" style="width: 15rem;">
                 <img class="card-img-top" src="https://static1.squarespace.com/static/51b3dc8ee4b051b96ceb10de/t/58caa61d03596e662a4596be/1489675807647/?format=750w ">
                 <div class="card-body" style="padding: 0.25rem; ">
                     <h5 class="card-title" style="text-align: center">Yoda:
-                        <span id="health">120</span>
+                        <span id="yHealth">120</span>
                     </h5>
                 </div>
             </div>
         </div>
 
         <div class="col-md-3 ">
-            <div id="darth" class="card" style="width: 15rem;">
+            <div id="darthSidiousandDarthVader" data-name="Darth Sidious and Darth Vader" class=" card " style="width: 15rem; ">
                 <img class="card-img-top" src="https://vignette.wikia.nocookie.net/starwars/images/0/09/SidiousVaderPromo.JPG/revision/latest/scale-to-width-down/250?cb=20060606043642 ">
                 <div class="card-body" style="padding: 0.25rem;">
                     <h5 class="card-title" style="text-align: center">Darth Sidious and Vader:
-                        <span id="health">190</span>
+                        <span id="dHealth">190</span>
                     </h5>
                 </div>
             </div>
         </div>
 
         <div class="col-md-3 ">
-            <div id="general" class="card" style="width: 15rem;">
+            <div id="generalGrevious" data-name="General Grevious" class="card" style="width: 15rem;">
                 <img class="card-img-top" src="https://assets-jpcust.jwpsrv.com/thumbs/hMEZszqF-720.jpg ">
                 <div class="card-body" style="padding: 0.25rem;">
                     <h5 class="card-title" style="text-align: center ">General Grevious:
-                        <span id="health">120</span>
+                        <span id="gHealth">120</span>
                     </h5>
                 </div>
             </div>
@@ -112,7 +108,11 @@
             <p id="otitle">Oponent</p>
         </div>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
+    <script languages="javascript" type="text/javascript" src="assets/game.js"></script>
 </body>
 
 </html>
