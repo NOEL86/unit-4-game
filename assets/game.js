@@ -24,29 +24,29 @@ var wins = 0;
 var cards = [
     {
         name: "Luke Skywalker",
-        health: 160,
-        attack: 8,
+        health: 185,
+        attackPower: 8,
         oponentCounter: 5,
-        id: "lukeSkywalker"
+        id: 'lukeSkywalker'
     },
     {
         name: "Darth Sidious and Darth Vader",
         health: 190,
-        attack: 9,
+        attackPower: 9,
         oponentCounter: 7,
         id: 'darthSidiousandDarthVader'
     },
     {
         name: "Yoda",
-        health: 120,
-        attack: 9,
+        health: 175,
+        attackPower: 9,
         oponentCounter: 6,
-        id: "yoda"
+        id: 'yoda'
     },
     {
         name: "General Grevious",
-        health: 120,
-        attack: 4,
+        health: 135,
+        attackPower: 7,
         oponentCounter: 2,
         id: 'generalGrevious'
     }
@@ -57,12 +57,12 @@ var script = $("#attackNotes");
 var health = $("#health");
 var attackButton = $("#attack");
 
+
 $(".card").draggable();
 
 $("#playerPosition").droppable(
     {
         accept: ".card",
-        // accept: ".card-title",
         drop: function (ev, ui) {
             console.log($(event.target));
             console.log(ui.draggable)
@@ -80,37 +80,47 @@ $("#playerPosition").droppable(
         }
     }
 )
-$("#oponentPosition").droppable(
-    {
-        accept: ".card",
-        // accept: ".card-title",
-        drop: function (ev, ui) {
-            console.log(event.target);
-            console.log($(ui.draggable).attr("data-name"))
-            opponentName = $(ui.draggable).attr("data-name");
+$("#oponentPosition").droppable({
 
-            for (var i = 0; i < cards.length; i++) {
-                if (cards[i].name == opponentName) {
-                    oponent = cards[i];
-                }
+    accept: ".card",
+    drop: function (ev, ui) {
+        console.log(event.target);
+        console.log($(ui.draggable).attr("data-name"))
+        opponentName = $(ui.draggable).attr("data-name");
+
+        for (var i = 0; i < cards.length; i++) {
+            if (cards[i].name == opponentName) {
+                oponent = cards[i];
+                document.getElementById("attack").disabled = false;
             }
-            console.log(oponent);
         }
-    }
-)
+        console.log(oponent);
 
+    },
+
+
+
+
+}
+);
 
 //this is the basic game loop calling each function to play the game
 $("#attack").on("click", function (event) {
-    event.preventDefault();
-    // $('#lightsaber').play();
+    event.preventDefault()
     attack()
 
-});
+
+    // var x = document.getElementById("lightsaber");
+    // function playAudio() {
+    //     x.play();
+})
+
+
 
 //adds a round the roundCounter
 function addRound() {
     totalRounds + - 1;
+
 }
 
 
@@ -118,7 +128,7 @@ function addRound() {
 function attack(p, o) {
     //store fitghters base attack
     //store the oponent counter attack
-    var fightersBase = fighter.attack;
+    var fightersBase = fighter.attackPower;
     var oponentsCounter = oponent.oponentCounter;
 
     var fightersAddedAttack = 0;
@@ -132,8 +142,12 @@ function attack(p, o) {
         window.location.reload()
     }
     else if (oponent.health <= 0) {
-        ++wins;
         $('#' + oponent.id).remove()
+        document.getElementById("attack").disabled = true;
+        wins++;
+        fighter.health += 25
+        $("#wins").text(wins)
+        console.log(wins)//debugging
 
     } else {
         //oponents
@@ -149,6 +163,7 @@ function attack(p, o) {
         else if (oponent.name == 'General Grevious') {
             $('#gHealth').text(oponent.health)
         }
+
         //fighters
         if (fighter.name == 'Luke Skywalker') {
             $('#lHealth').text(fighter.health)
@@ -160,46 +175,51 @@ function attack(p, o) {
             $('#gHealth').text(fighter.health)
         }
     }
-    //if our charictor dies losses +1 game restarts
-    //if oppnent dies wins +1 and we will remove the oponents card
-    //else subtract opponents and users helth and cick attack again
+    if (oponent.name == 'Luke Skywalker') {
+        $("#notesBox").text("No one beats Luke Skywalker!")
 
+    } else if (oponent.name == 'Yoda') {
+        $("#notesBox").text("Too Old!")
+    }
+    else if (oponent.name == 'Darth Sidious and Darth Vader') {
+        $("#notesBox").text("Feel the dark side of the force!")
+    }
+    else if (oponent.name == 'General Grevious') {
+        $("#notesBox").text("Die Jedi Scum!")
+    }
 
-    // if (fighter.name == 'Luke Skywalker') {
-
-    //     result = 'Oponent counter attack was successful! You took 10 damage';
-    //     fighter.Health -= 10;
-    // } else if (move = 5 && p === 'attack') {
-    //     result = 'You dealt 25 damage!';
-    //     oponent.Health -= 15;
-    //     fighter.Health -= 2;
-    // } else if (move < 5 && p === 'attack') {
-    //     result = 'Your counter attack was not successful! You were dealt 15 damage!! Your oponent was dealt 5 damage';
-    //     fighter.Health -= 15;
-    //     oponent.Health -= 5;
-    // }
-
+    if (wins >= 3)
+        alert("You Win!")
 }
+
+
+
+//if our charictor dies losses +1 game restarts
+//if oppnent dies wins +1 and we will remove the oponents card
+//else subtract opponents and users helth and cick attack again
+
+
+
 
 //play a sound associate with attack
 // function oponentMove(fighter)
 
 // function roundResults(result) {
 
-//     $("#attackNotes").innerHTML += result + "<br>"
+// 
 // }
 
-function gameOver() {
-    if (yourHealth === 0 || compHealth === 0) {
-        roundResults(result);
-        attackButton.disabled = true;
-        alert("Game Over!");
-        $(".card").draggable({
-            revert: true
-        });
-        $(":reset").window;
-    }
-};
+// function gameOver() {
+//     if (yourHealth === 0 || compHealth === 0) {
+//         roundResults(result);
+//         attackButton.disabled = true;
+//         alert("Game Over!");
+//         $(".card").draggable({
+//             revert: true
+//         });
+//         $(":reset").window;
+//     }
+// };
 
 
 

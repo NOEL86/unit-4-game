@@ -10,6 +10,11 @@ h1 {
     font-size: 3rem;
     margin-left: 250px;
 }
+h2{
+    font-size: 20px;
+    color: red;
+    font-weight: bolder;
+}
 
 .card {
     margin-left: 30px;
@@ -26,21 +31,26 @@ h1 {
     margin-right: 150px;
     font-family: 'Russo One', sans-serif;
     margin-top: 25px;
-    overflow: wrap;
+    
 }
 
 #notesBox {
     margin-top: 25px;
     width: 350px;
     height: 100px;
+    text-align: left;
+    overflow: wrap;
+    font-weight: bolder;
+    font-size: 20px;
+    color: red;
 }
 
 #oponentPosition {
         margin-right: 150px;
         border: solid 5px black;
         box-sizing: unset;
-        height: 400px;
-        width: 400px;
+        height: 350px;
+        width: 350px;
         background-color: black;
 }
 
@@ -48,8 +58,8 @@ h1 {
         margin-left: 150px;
         border: solid 5px black;
         box-sizing: unset;
-        height: 400px;
-        width: 400px;
+        height: 350px;
+        width: 350px;
         background-color: black;
 }
 
