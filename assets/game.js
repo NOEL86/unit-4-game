@@ -138,7 +138,7 @@ function attack(p, o) {
     fighter.health -= oponentsCounter;
 
     if (fighter.health <= 0) {
-        losses = losses + 1
+        // losses = losses + 1
         window.location.reload()
     }
     else if (oponent.health <= 0) {
@@ -167,10 +167,13 @@ function attack(p, o) {
         //fighters
         if (fighter.name == 'Luke Skywalker') {
             $('#lHealth').text(fighter.health)
+
         } else if (fighter.name == 'Yoda') {
             $('#yHealth').text(fighter.health)
+
         } else if (fighter.name == 'Darth Sidious and Darth Vader') {
             $('#dHealth').text(fighter.health)
+
         } else if (fighter.name == 'General Grevious') {
             $('#gHealth').text(fighter.health)
         }
