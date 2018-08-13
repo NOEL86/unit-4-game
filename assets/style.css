@@ -1,11 +1,15 @@
 body, h1 {
     background-image: url('https://i.imgur.com/OuSizUw.jpg');
-    background-size: cover;
+    background-repeat: no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
 }
 
 h1 {
     font-family: 'Russo One', sans-serif;
-    text-shadow: 3px 3px white;
+    text-shadow: 3px 3px darkslategray;
     margin-bottom: 2rem;
     font-size: 3rem;
     margin-left: 250px;
@@ -14,10 +18,11 @@ h2{
     font-size: 20px;
     color: red;
     font-weight: bolder;
+    
 }
 
 .card {
-    margin-left: 30px;
+    margin: 0 auto;
     z-index: 99;
 }
 
@@ -46,21 +51,21 @@ h2{
 }
 
 #oponentPosition {
-        margin-right: 150px;
-        border: solid 5px black;
-        box-sizing: unset;
-        height: 350px;
-        width: 350px;
-        background-color: black;
+    margin: 0 auto;
+    border: solid 5px black;
+    box-sizing: unset;
+    height: 300px;
+    width: 50%;
+    background-color: black;
 }
 
 #playerPosition {
-        margin-left: 150px;
-        border: solid 5px black;
-        box-sizing: unset;
-        height: 350px;
-        width: 350px;
-        background-color: black;
+    margin: 0 auto;
+    border: solid 5px black;
+    box-sizing: unset;
+    height: 300px;
+    width: 50%;
+    background-color: black;
 }
 
 .draggable
@@ -78,21 +83,20 @@ h2{
 p {
     color: red;
     font-family: 'Russo One', sans-serif;
-    font-size: 16px;
-}
-
-#ftitle {
-    margin-left: 300px;
     font-size: 24px;
-}
-
-#otitle {
-    margin-left: 120px;
-    font-size: 24px;
-    
+    background-color: rgba(0, 0, 0, 0.815);
+    /* display:inline; */
+    text-align: center;
+   
 }
 
 .fightPosition {
     z-index: -1;
 
+}
+
+#ftitle, #otitle {
+    text-align: center;
+    margin: 0 auto;
+    padding: 5px;
 }

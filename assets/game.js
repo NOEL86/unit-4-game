@@ -25,28 +25,28 @@ var cards = [
     {
         name: "Luke Skywalker",
         health: 185,
-        attackPower: 8,
+        attackPower: 15,
         oponentCounter: 5,
         id: 'lukeSkywalker'
     },
     {
         name: "Darth Sidious and Darth Vader",
-        health: 190,
-        attackPower: 9,
+        health: 180,
+        attackPower: 12,
         oponentCounter: 7,
         id: 'darthSidiousandDarthVader'
     },
     {
         name: "Yoda",
-        health: 175,
-        attackPower: 9,
+        health: 180,
+        attackPower: 15,
         oponentCounter: 6,
         id: 'yoda'
     },
     {
         name: "General Grevious",
-        health: 135,
-        attackPower: 7,
+        health: 100,
+        attackPower: 10,
         oponentCounter: 2,
         id: 'generalGrevious'
     }
@@ -97,32 +97,22 @@ $("#oponentPosition").droppable({
         console.log(oponent);
 
     },
-
-
-
-
-}
-);
+});
 
 //this is the basic game loop calling each function to play the game
 $("#attack").on("click", function (event) {
     event.preventDefault()
     attack()
-
-
     // var x = document.getElementById("lightsaber");
     // function playAudio() {
     //     x.play();
-})
-
-
+});
 
 //adds a round the roundCounter
 function addRound() {
     totalRounds + - 1;
 
-}
-
+};
 
 //player and oponent moves
 function attack(p, o) {
@@ -191,38 +181,12 @@ function attack(p, o) {
         $("#notesBox").text("Die Jedi Scum!")
     }
 
-    if (wins >= 3)
+    if (wins >= 3) {
         alert("You Win!")
+        window.location.reload()
+    }
 }
 
-
-
-//if our charictor dies losses +1 game restarts
-//if oppnent dies wins +1 and we will remove the oponents card
-//else subtract opponents and users helth and cick attack again
-
-
-
-
-//play a sound associate with attack
-// function oponentMove(fighter)
-
-// function roundResults(result) {
-
-// 
-// }
-
-// function gameOver() {
-//     if (yourHealth === 0 || compHealth === 0) {
-//         roundResults(result);
-//         attackButton.disabled = true;
-//         alert("Game Over!");
-//         $(".card").draggable({
-//             revert: true
-//         });
-//         $(":reset").window;
-//     }
-// };
 
 
 
